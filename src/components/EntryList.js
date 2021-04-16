@@ -12,7 +12,7 @@ export const EntryList = () => {
 
   useEffect(() => {
     getEntries()
-      .then(getMoods)
+      // .then(getMoods)
   }, []);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const EntryList = () => {
     <>
       <h1>Filter Entries</h1>
 
-      {
+      {/* {
         moods.map(mood => {
           return <>
             <input type="radio" value={mood.id} name="moodId" checked={moodSelected === mood.id}
@@ -45,11 +45,11 @@ export const EntryList = () => {
             /> {mood.label}
           </>
         })
-      }
+      } */}
 
       <div >
         <button onClick={() => {
-          setEntries(entries)
+          getEntries()
           setMoodSelected("")
         }}>Clear Filter</button>
       </div>
@@ -74,7 +74,7 @@ export const EntryList = () => {
 
       <div className="entries">
         {filteredEntries.map(entry => {
-          return <Entry key={entry.id} entry={entry} moods={moods} />;
+          return <Entry key={entry.id} entry={entry} /*moods={moods} */ />;
         })}
       </div>
 
